@@ -14,8 +14,9 @@ module.exports = function () {
         container: 'body',
         viewport: { selector: 'body', padding: 20 }
     })
-    
-    // Initialise Bootstrap tooltips
-    //http://getbootstrap.com/javascript/#tooltips
-    $('[data-toggle="tooltip"]').tooltip()
+
+    // Destroy an existing popover
+    $('[data-toggle="popover"]').click(function(e) {
+      $('.popover').popover('destroy')
+    })
 }
