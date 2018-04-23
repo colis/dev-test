@@ -14,12 +14,32 @@
       </div>
     </div>
 
+    {% if seasons is not empty %}
+    <div class="container-fluid seasons">
+        <div class="row">
+            <div class="text-center">
+                <form action="index.php">
+                    <select id="seasons" name="season">
+                        <option disabled selected value> -- select a season -- </option>
+                            <option value="0">All Seasons</option>
+                        {% for season in seasons %}
+                            <option value="{{ season }}">Season {{ season }}</option>
+                        {% endfor %}
+                    </select>
+                    <button>Apply filter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
     <div class="container">
         {% for episode in episodes %}
             {% if loop.index%2 == 1 %}<div class="row">{%endif %}
 
                 {{ include('episode.html') }}
-        
+
             {% if loop.index%2 == 0 %}</div>{%endif %}
         {% endfor %}
     </div>
