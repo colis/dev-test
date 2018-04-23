@@ -1,3 +1,9 @@
 html {
     background: $body-bg;
+
+    .container {
+        .row {
+            margin-bottom: 15px;
+        }
+    }
 }
