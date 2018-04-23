@@ -1,7 +1,8 @@
 .episode {
     p {
         font-family: 'PT Serif', serif;
-        font-size: 15px;
-        line-height: 25px;            
+        font-size: $font-size-small;
+        line-height: 20px;
+        margin: 0;
     }
 }
