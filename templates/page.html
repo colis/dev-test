@@ -15,13 +15,19 @@
     </div>
 
     <div class="container">
-        {% for episode in episodes %}
-            {% if loop.index%2 == 1 %}<div class="row">{%endif %}
+        {% if errors is not empty %}
+            <div class="alert alert-danger">
+                Sorry, there was an error. Please try again by reloading the page.
+            </div>
+        {% else %}
+            {% for episode in episodes %}
+                {% if loop.index%2 == 1 %}<div class="row">{%endif %}
 
-                {{ include('episode.html') }}
-        
-            {% if loop.index%2 == 0 %}</div>{%endif %}
-        {% endfor %}
+                    {{ include('episode.html') }}
+
+                {% if loop.index%2 == 0 %}</div>{%endif %}
+            {% endfor %}
+        {% endif %}
     </div>
 
     <footer class="footer">
